@@ -16,11 +16,11 @@ Pod::Spec.new do |s|
 
   s.author             = { "quheng" => "quheng@babytree-inc.com" }
 
-  s.source       = { :git => "http://EXAMPLE/BAFCrashShield.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/allanqu/BAFCrashShield.git", :tag => "#{s.version}" }
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
+  s.source_files  = "include/**/*.{h,m}", "src/**/*.{h,m}"
   # s.exclude_files = "Classes/Exclude"
-
+  s.requires_arc = true
 
 
 end
