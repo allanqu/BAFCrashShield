@@ -11,25 +11,6 @@
 
 @implementation NSMutableDictionary (CrashShield)
 
-+ (void)shieldCrashByExchangeMethod{
-    
-    Class dictionaryM = NSClassFromString(@"__NSDictionaryM");
-    
-    //setObject:forKey:
-    [BAFCrashHandler exchangeInstanceMethod:dictionaryM method1Sel:@selector(setObject:forKey:)
-                                 method2Sel:@selector(safe_setObject:forKey:)];
-    
-    //setObject:forKeyedSubscript:
-    if (BAFCrashiOSVersion(11.0)) {
-        [BAFCrashHandler exchangeInstanceMethod:dictionaryM method1Sel:@selector(setObject:forKeyedSubscript:)
-                                     method2Sel:@selector(safe_setObject:forKeyedSubscript:)];
-    }
-    //removeObjectForKey:
-    Method removeObjectForKey = class_getInstanceMethod(dictionaryM, @selector(removeObjectForKey:));
-    Method safeRemoveObjectForKey = class_getInstanceMethod(dictionaryM, @selector(safe_removeObjectForKey:));
-    method_exchangeImplementations(removeObjectForKey, safeRemoveObjectForKey);
-}
-
 #pragma mark - setObject:forKey:
 
 - (void)safe_setObject:(id)anObject forKey:(id<NSCopying>)aKey {
@@ -38,7 +19,8 @@
         [self safe_setObject:anObject forKey:aKey];
     }
     @catch (NSException *exception) {
-//        [AvoidCrash noteErrorWithException:exception defaultToDo:AvoidCrashDefaultIgnore];
+        
+        
     }
     @finally {
         
@@ -51,7 +33,7 @@
         [self safe_setObject:obj forKeyedSubscript:key];
     }
     @catch (NSException *exception) {
-//        [AvoidCrash noteErrorWithException:exception defaultToDo:AvoidCrashDefaultIgnore];
+        
     }
     @finally {
         
@@ -67,7 +49,8 @@
         [self safe_removeObjectForKey:aKey];
     }
     @catch (NSException *exception) {
-//        [AvoidCrash noteErrorWithException:exception defaultToDo:AvoidCrashDefaultIgnore];
+        
+        
     }
     @finally {
         

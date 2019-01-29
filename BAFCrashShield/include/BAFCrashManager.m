@@ -9,7 +9,6 @@
 #import "BAFCrashManager.h"
 #import "NSMutableArray+CrashShield.h"
 #import "NSDictionary+CrashShield.h"
-#import "BAFSafeSelector.h"
 #import "NSArray+CrashShield.h"
 #import "NSObject+CrashShield.h"
 #import "BAFShieldCenter.h"

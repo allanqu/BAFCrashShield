@@ -11,65 +11,6 @@
 
 @implementation NSArray (CrashShield)
 
-+ (void)shieldCrashWithArr:(NSArray *)arr{
-    
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-    
-    
-//
-//    NSArray *shieldArr = @[@"arrayWithObjects:count:",
-//                            @"objectsAtIndexes:",
-//                            @"objectAtIndex:",
-//                            @"getObjects:range:"];
-    
-//    if (!arr.count) {
-//        return;
-//    }
-    
-    
-//    [BAFShieldCenter safeShieldWithArray:arr];
-    
-
-        
-        //实例方法
-        //====================
-        //   instance method
-        //====================
-        
-//        Class __NSArray = NSClassFromString(@"NSArray");
-//        Class __NSArrayI = NSClassFromString(@"__NSArrayI");
-//        Class __NSSingleObjectArrayI = NSClassFromString(@"__NSSingleObjectArrayI");
-//        Class __NSArray0 = NSClassFromString(@"__NSArray0");
-    
-        
-        
-        //objectAtIndex:
-        
-//        [BAFCrashHandler exchangeInstanceMethod:__NSArrayI method1Sel:@selector(objectAtIndex:) method2Sel:@selector(safe__NSArrayIObjectAtIndex:)];
-//
-//        [BAFCrashHandler exchangeInstanceMethod:__NSSingleObjectArrayI method1Sel:@selector(objectAtIndex:) method2Sel:@selector(safe__NSSingleObjectArrayIObjectAtIndex:)];
-//
-//        [BAFCrashHandler exchangeInstanceMethod:__NSArray0 method1Sel:@selector(objectAtIndex:) method2Sel:@selector(safe__NSArray0ObjectAtIndex:)];
-    
-        //objectAtIndexedSubscript:
-//        if (AvoidCrashIsiOS(11.0)) {
-//            [AvoidCrash exchangeInstanceMethod:__NSArrayI method1Sel:@selector(objectAtIndexedSubscript:) method2Sel:@selector(__NSArrayIAvoidCrashObjectAtIndexedSubscript:)];
-//        }
-        
-        
-        //getObjects:range:
-//        [BAFCrashHandler exchangeInstanceMethod:__NSArray method1Sel:@selector(getObjects:range:) method2Sel:@selector(safe__NSArrayGetObjects:range:)];
-//
-//        [BAFCrashHandler exchangeInstanceMethod:__NSSingleObjectArrayI method1Sel:@selector(getObjects:range:) method2Sel:@selector(safe__NSSingleObjectArrayIGetObjects:range:)];
-//
-//        [BAFCrashHandler exchangeInstanceMethod:__NSArrayI method1Sel:@selector(getObjects:range:) method2Sel:@selector(safe__NSArrayIGetObjects:range:)];
-
-        
-        
-//    });
-    
-}
 
 + (instancetype)safe_arrayWithObjects:(const id  _Nonnull __unsafe_unretained *)objects count:(NSInteger)idx{
     

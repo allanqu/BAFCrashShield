@@ -89,5 +89,9 @@
 			<string>safeShieldForSetValuesForUnRecognizedSelector</string>
 		</array>
 	</dict>
+	<dict>
+		<key>dictionaryWithObjects:forKeys:count:</key>
+		<array/>
+	</dict>
 </array>
 </plist>

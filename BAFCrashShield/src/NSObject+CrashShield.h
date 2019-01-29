@@ -10,7 +10,7 @@
 @interface NSObject (CrashShield)
 
 
-+ (void)avoidCrashExchangeMethodShouldDealWithNoneSel:(BOOL)dealWithNoneSel;
+//+ (void)avoidCrashExchangeMethodShouldDealWithNoneSel:(BOOL)dealWithNoneSel;
 
 
 @end

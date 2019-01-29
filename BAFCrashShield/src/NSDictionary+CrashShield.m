@@ -11,17 +11,6 @@
 
 @implementation NSDictionary (CrashShield)
 
-//+ (void)shieldCrashByExchangeMethod{
-//
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//
-//        [BAFCrashHandler exchangeClassMethod:self
-//                                  method1Sel:@selector(dictionaryWithObjects:forKeys:count:)
-//                                  method2Sel:@selector(safe_dictionaryWithObjects:forKeys:count:)];
-//    });
-//
-//}
 
 + (instancetype)safe_dictionaryWithObjects:(const id  _Nonnull __unsafe_unretained *)objects
                                    forKeys:(const id<NSCopying>  _Nonnull __unsafe_unretained *)keys

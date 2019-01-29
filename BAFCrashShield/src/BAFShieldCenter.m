@@ -227,6 +227,51 @@
 }
 
 
+#pragma mark ----NSDictionary
+
++ (void)safeShieldForDictionaryWithObjectsForKeysCount{
+    
+    [BAFCrashHandler exchangeClassMethod:[NSDictionary class]
+                              method1Sel:@selector(dictionaryWithObjects:forKeys:count:)
+                              method2Sel:NSSelectorFromString(@"safe_dictionaryWithObjects:forKeys:count:")];
+    
+}
+
+#pragma mark ----NSMutableDictionary
+
++ (void)safeShieldForMutableDictionarySetObjectForKey{
+    
+    
+    Class dictionaryM = NSClassFromString(@"__NSDictionaryM");
+    
+    //setObject:forKey:
+    [BAFCrashHandler exchangeInstanceMethod:dictionaryM
+                                 method1Sel:@selector(setObject:forKey:)
+                                 method2Sel:NSSelectorFromString(@"safe_setObject:forKey:")];
+
+}
+
++ (void)safeShieldForMutableDictionarySetObjectForKeyedSubscript{
+    
+    //setObject:forKeyedSubscript:
+    if (BAFCrashiOSVersion(11.0)) {
+        Class dictionaryM = NSClassFromString(@"__NSDictionaryM");
+        [BAFCrashHandler exchangeInstanceMethod:dictionaryM method1Sel:@selector(setObject:forKeyedSubscript:)
+                                     method2Sel:NSSelectorFromString(@"safe_setObject:forKeyedSubscript:")];
+    }
+    
+}
+
++ (void)safeShieldForMutableDictionaryRemoveObjectForKey{
+    
+    //removeObjectForKey:
+
+    Class dictionaryM = NSClassFromString(@"__NSDictionaryM");
+    
+    [BAFCrashHandler exchangeInstanceMethod:dictionaryM
+                                 method1Sel:@selector(removeObjectForKey:)
+                                 method2Sel:NSSelectorFromString(@"safe_removeObjectForKey:")];
+}
 
 
 @end
