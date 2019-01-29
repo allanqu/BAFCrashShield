@@ -9,5 +9,14 @@
 #import "BAFCrashTable.h"
 
 @implementation BAFCrashTable
+//
+//+ (void)saveCurrentIMP:(IMP)imp methodName:(NSString *)methodName{
+//    
+//    
+//    
+//}
+//
+//+ (BOOL)
+
 
 @end

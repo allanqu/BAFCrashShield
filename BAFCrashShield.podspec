@@ -3,11 +3,11 @@
 Pod::Spec.new do |s|
 
   s.name         = "BAFCrashShield"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A short description of BAFCrashShield."
 
   s.description  = <<-DESC
-                  it is a killer for crash.
+                  It is a killer for crash.
                    DESC
 
   s.homepage     = "http://EXAMPLE/BAFCrashShield"
@@ -24,6 +24,8 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.platform     = :ios
+  
+   s.resources = "Resources/*"
 
 
 end

@@ -12,8 +12,8 @@
 		505908B021F0888E00E22D9A /* BAFCrashShield.h in Headers */ = {isa = PBXBuildFile; fileRef = 505908A221F0888E00E22D9A /* BAFCrashShield.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		505908BB21F0899100E22D9A /* BAFCrashManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 505908B921F0899100E22D9A /* BAFCrashManager.h */; };
 		505908BC21F0899100E22D9A /* BAFCrashManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 505908BA21F0899100E22D9A /* BAFCrashManager.m */; };
-		505908BF21F08F1200E22D9A /* NSArray+CrashShield.h in Headers */ = {isa = PBXBuildFile; fileRef = 505908BD21F08F1200E22D9A /* NSArray+CrashShield.h */; };
-		505908C021F08F1200E22D9A /* NSArray+CrashShield.m in Sources */ = {isa = PBXBuildFile; fileRef = 505908BE21F08F1200E22D9A /* NSArray+CrashShield.m */; };
+		505908BF21F08F1200E22D9A /* NSMutableArray+CrashShield.h in Headers */ = {isa = PBXBuildFile; fileRef = 505908BD21F08F1200E22D9A /* NSMutableArray+CrashShield.h */; };
+		505908C021F08F1200E22D9A /* NSMutableArray+CrashShield.m in Sources */ = {isa = PBXBuildFile; fileRef = 505908BE21F08F1200E22D9A /* NSMutableArray+CrashShield.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		505908C321F08F2D00E22D9A /* NSDictionary+CrashShield.h in Headers */ = {isa = PBXBuildFile; fileRef = 505908C121F08F2D00E22D9A /* NSDictionary+CrashShield.h */; };
 		505908C421F08F2D00E22D9A /* NSDictionary+CrashShield.m in Sources */ = {isa = PBXBuildFile; fileRef = 505908C221F08F2D00E22D9A /* NSDictionary+CrashShield.m */; };
 		505908C921F0902700E22D9A /* BAFCrashConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 505908C721F0902700E22D9A /* BAFCrashConfig.h */; };
@@ -44,8 +44,8 @@
 		505908AF21F0888E00E22D9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		505908B921F0899100E22D9A /* BAFCrashManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BAFCrashManager.h; sourceTree = "<group>"; };
 		505908BA21F0899100E22D9A /* BAFCrashManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BAFCrashManager.m; sourceTree = "<group>"; };
-		505908BD21F08F1200E22D9A /* NSArray+CrashShield.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+CrashShield.h"; sourceTree = "<group>"; };
-		505908BE21F08F1200E22D9A /* NSArray+CrashShield.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CrashShield.m"; sourceTree = "<group>"; };
+		505908BD21F08F1200E22D9A /* NSMutableArray+CrashShield.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+CrashShield.h"; sourceTree = "<group>"; };
+		505908BE21F08F1200E22D9A /* NSMutableArray+CrashShield.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+CrashShield.m"; sourceTree = "<group>"; };
 		505908C121F08F2D00E22D9A /* NSDictionary+CrashShield.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+CrashShield.h"; sourceTree = "<group>"; };
 		505908C221F08F2D00E22D9A /* NSDictionary+CrashShield.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+CrashShield.m"; sourceTree = "<group>"; };
 		505908C721F0902700E22D9A /* BAFCrashConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BAFCrashConfig.h; sourceTree = "<group>"; };
@@ -130,8 +130,8 @@
 			children = (
 				505908D321F0916800E22D9A /* BAFCrashTable.h */,
 				505908D421F0916800E22D9A /* BAFCrashTable.m */,
-				505908BD21F08F1200E22D9A /* NSArray+CrashShield.h */,
-				505908BE21F08F1200E22D9A /* NSArray+CrashShield.m */,
+				505908BD21F08F1200E22D9A /* NSMutableArray+CrashShield.h */,
+				505908BE21F08F1200E22D9A /* NSMutableArray+CrashShield.m */,
 				505908C121F08F2D00E22D9A /* NSDictionary+CrashShield.h */,
 				505908C221F08F2D00E22D9A /* NSDictionary+CrashShield.m */,
 				505908CB21F0907000E22D9A /* BAFSafeSelector.h */,
@@ -150,7 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				505908C321F08F2D00E22D9A /* NSDictionary+CrashShield.h in Headers */,
-				505908BF21F08F1200E22D9A /* NSArray+CrashShield.h in Headers */,
+				505908BF21F08F1200E22D9A /* NSMutableArray+CrashShield.h in Headers */,
 				505908CD21F0907000E22D9A /* BAFSafeSelector.h in Headers */,
 				505908C921F0902700E22D9A /* BAFCrashConfig.h in Headers */,
 				505908BB21F0899100E22D9A /* BAFCrashManager.h in Headers */,
@@ -259,7 +259,7 @@
 				505908CE21F0907000E22D9A /* BAFSafeSelector.m in Sources */,
 				505908C421F08F2D00E22D9A /* NSDictionary+CrashShield.m in Sources */,
 				505908BC21F0899100E22D9A /* BAFCrashManager.m in Sources */,
-				505908C021F08F1200E22D9A /* NSArray+CrashShield.m in Sources */,
+				505908C021F08F1200E22D9A /* NSMutableArray+CrashShield.m in Sources */,
 				505908D221F0908F00E22D9A /* BAFCrashHandler.m in Sources */,
 				505908D621F0916800E22D9A /* BAFCrashTable.m in Sources */,
 				505908CA21F0902700E22D9A /* BAFCrashConfig.m in Sources */,
@@ -413,6 +413,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,6 +438,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

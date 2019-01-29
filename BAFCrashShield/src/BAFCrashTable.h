@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#import "BBCrashShieldIMPModel.h"
+
+
 @interface BAFCrashTable : NSObject
 
 @end

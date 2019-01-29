@@ -2,11 +2,11 @@
 //  NSArray+CrashShield.h
 //  BAFCrashShield
 //
-//  Created by Allan on 2018/12/07.
-//  Copyright © 2018 babytree. All rights reserved.
+//  Created by Allan on 2019/1/19.
 //
 
 #import <Foundation/Foundation.h>
+#import "BAFCrashShieldProtocol.h"
 
 @interface NSArray (CrashShield)
 

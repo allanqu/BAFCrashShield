@@ -6,7 +6,7 @@
 //  Copyright © 2018 babytree. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "BAFCrashShieldProtocol.h"
 
 @interface NSDictionary (CrashShield)
 
