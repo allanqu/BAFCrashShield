@@ -12,10 +12,6 @@
 
 @implementation NSObject (CrashShield)
 
-//=================================================================
-//              unrecognized selector sent to instance
-//=================================================================
-#pragma mark - unrecognized selector sent to instance
 
 - (void)safe_setValue:(id)value forKey:(NSString *)key{
     
@@ -61,6 +57,7 @@
     }
 }
 
+#pragma mark - unrecognized selector sent to instance
 
 - (NSMethodSignature *)safe_methodSignatureForSelector:(SEL)aSelector {
     

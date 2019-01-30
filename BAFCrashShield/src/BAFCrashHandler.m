@@ -26,6 +26,8 @@
     Method originalMethod = class_getInstanceMethod(anClass, method1Sel);
     Method swizzledMethod = class_getInstanceMethod(anClass, method2Sel);
     
+//    NSLog(@"originalMethod = %p,swizzledMethod=%p",originalMethod,swizzledMethod);
+    
     BOOL didAddMethod =
     class_addMethod(anClass,
                     method1Sel,

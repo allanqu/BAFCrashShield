@@ -12,56 +12,6 @@
 
 @implementation NSMutableArray (CrashShield)
 
-//+ (void)shieldCrashByExchangeMethod{
-//    
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//        
-//    
-//        Class arrayMClass = NSClassFromString(@"__NSArrayM");
-//        
-//        //objectAtIndex:
-//        [BAFCrashHandler exchangeInstanceMethod:arrayMClass
-//                                method1Sel:@selector(objectAtIndex:)
-//                                method2Sel:@selector(safe_objectAtIndex:)];
-//        
-//        //objectAtIndexedSubscript
-//        
-////        if (AvoidCrashIsiOS(11.0)) {
-////            [BAFCrashHandler exchangeInstanceMethod:arrayMClass
-////                                         method1Sel:@selector(objectAtIndexedSubscript:) method2Sel:@selector(safe_objectAtIndexedSubscript:)];
-////        }
-//        
-//        //setObject:atIndexedSubscript:
-//        [BAFCrashHandler exchangeInstanceMethod:arrayMClass
-//                                     method1Sel:@selector(setObject:atIndexedSubscript:)
-//                                     method2Sel:@selector(safe_setObject:atIndexedSubscript:)];
-//        
-//        
-//        //removeObjectAtIndex:
-//        [BAFCrashHandler exchangeInstanceMethod:arrayMClass
-//                                     method1Sel:@selector(removeObjectAtIndex:)
-//                                     method2Sel:@selector(safe_removeObjectAtIndex:)];
-//        
-//        //insertObject:atIndex:
-//        [BAFCrashHandler exchangeInstanceMethod:arrayMClass
-//                                     method1Sel:@selector(insertObject:atIndex:)
-//                                     method2Sel:@selector(safe_insertObject:atIndex:)];
-//        
-//        //getObjects:range:
-//        [BAFCrashHandler exchangeInstanceMethod:arrayMClass
-//                                     method1Sel:@selector(getObjects:range:)
-//                                     method2Sel:@selector(safe_getObjects:range:)];
-////
-//        //addObject:
-//        [BAFCrashHandler exchangeInstanceMethod:arrayMClass
-//                                     method1Sel:@selector(addObject:)
-//                                     method2Sel:@selector(safe_addObject:)];
-//        
-//    });
-//    
-//}
-
 
 - (id)safe_objectAtIndex:(NSUInteger)index{
     
@@ -79,6 +29,19 @@
     
 }
 
+- (void)safe_objectsAtIndexes:(NSIndexSet *)indexes{
+
+    @try {
+        
+        [self safe_objectsAtIndexes:indexes];
+        
+    } @catch (NSException *exception) {
+        
+    } @finally {
+        
+    }
+    
+}
 
 - (void)safe_setObject:(id)object atIndexedSubscript:(NSUInteger)index{
     

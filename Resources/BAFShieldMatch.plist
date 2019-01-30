@@ -11,8 +11,8 @@
 	<dict>
 		<key>objectsAtIndexes:</key>
 		<array>
-			<string>safeShieldForObjectsAtIndexs</string>
-			<string>safeShieldForMutableObjectsAtIndexs</string>
+			<string>safeShieldForObjectsAtIndexes</string>
+			<string>safeShieldForMutableObjectsAtIndexes</string>
 		</array>
 	</dict>
 	<dict>
@@ -60,12 +60,6 @@
 		</array>
 	</dict>
 	<dict>
-		<key>setValue:forKey:</key>
-		<array>
-			<string>safeShieldForSetVaueForKey</string>
-		</array>
-	</dict>
-	<dict>
 		<key>setValue:forKeyPath:</key>
 		<array>
 			<string>safeShieldForSetVaueForKeyPath</string>
@@ -91,7 +85,87 @@
 	</dict>
 	<dict>
 		<key>dictionaryWithObjects:forKeys:count:</key>
-		<array/>
+		<array>
+			<string>safeShieldForDictionaryWithObjectsForKeysCount</string>
+		</array>
+	</dict>
+	<dict>
+		<key>setObject:forKey:</key>
+		<array>
+			<string>safeShieldForMutableDictionarySetObjectForKey</string>
+		</array>
+	</dict>
+	<dict>
+		<key>setObject:forKeyedSubscript:</key>
+		<array>
+			<string>safeShieldForMutableDictionarySetObjectForKeyedSubscript</string>
+		</array>
+	</dict>
+	<dict>
+		<key>removeObjectForKey:</key>
+		<array>
+			<string>safeShieldForMutableDictionaryRemoveObjectForKey</string>
+		</array>
+	</dict>
+	<dict>
+		<key>characterAtIndex:</key>
+		<array>
+			<string>safeShieldForCharacterAtIndex</string>
+		</array>
+	</dict>
+	<dict>
+		<key>substringFromIndex:</key>
+		<array>
+			<string>safeShieldForSubstringFromIndex</string>
+		</array>
+	</dict>
+	<dict>
+		<key>substringToIndex:</key>
+		<array>
+			<string>safeShieldForSubstringToIndex</string>
+		</array>
+	</dict>
+	<dict>
+		<key>substringWithRange:</key>
+		<array>
+			<string>safeShieldForSubstringWithRange</string>
+		</array>
+	</dict>
+	<dict>
+		<key>stringByReplacingOccurrencesOfString:withString:</key>
+		<array>
+			<string>safeShieldForStringByReplacingOccurrencesOfString</string>
+		</array>
+	</dict>
+	<dict>
+		<key>stringByReplacingOccurrencesOfString:withString:options:range:</key>
+		<array>
+			<string>safeShieldForStringByReplacingOccurrencesOfStringWithStringOptionsRange</string>
+		</array>
+	</dict>
+	<dict>
+		<key>stringByReplacingCharactersInRange:withString:</key>
+		<array>
+			<string>safeShieldForStringByReplacingCharactersInRangeWithString</string>
+		</array>
+	</dict>
+	<dict>
+		<key>replaceCharactersInRange:withString:</key>
+		<array>
+			<string>safeShieldForReplaceCharactersInRange</string>
+		</array>
+	</dict>
+	<dict>
+		<key>insertString:atIndex:</key>
+		<array>
+			<string>safeShieldForInsertStringAtIndex</string>
+		</array>
+	</dict>
+	<dict>
+		<key>deleteCharactersInRange:</key>
+		<array>
+			<string>safeShieldForDeleteCharactersInRange</string>
+		</array>
 	</dict>
 </array>
 </plist>

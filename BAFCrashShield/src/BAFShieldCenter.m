@@ -38,6 +38,8 @@
     }
 }
 
+#pragma mark ---- NSArray
+
 + (void)safeShieldForArrayWithObjectsAndcount{
     
     //====================
@@ -50,10 +52,10 @@
 }
 
 
-+ (void)safeShieldForObjectsAtIndexs{
++ (void)safeShieldForObjectsAtIndexes{
     
-    Class __NSArray = NSClassFromString(@"NSArray");
     //objectsAtIndexes:
+    Class __NSArray = NSClassFromString(@"NSArray");
     [BAFCrashHandler exchangeInstanceMethod:__NSArray
                                  method1Sel:@selector(objectsAtIndexes:)
                                  method2Sel:NSSelectorFromString(@"safe__NSArrayObjectsAtIndexes:")];
@@ -84,11 +86,11 @@
 
 + (void)safeShieldForGetObjectsRange{
     
+    //getObjects:range:
     Class __NSArray = NSClassFromString(@"NSArray");
     Class __NSArrayI = NSClassFromString(@"__NSArrayI");
     Class __NSSingleObjectArrayI = NSClassFromString(@"__NSSingleObjectArrayI");
     
-    //getObjects:range:
     [BAFCrashHandler exchangeInstanceMethod:__NSArray
                                  method1Sel:@selector(getObjects:range:)
                                  method2Sel:NSSelectorFromString(@"safe__NSArrayGetObjects:range:")];
@@ -103,6 +105,9 @@
 
 }
 
+
+#pragma mark ---- NSMutableArray
+
 + (void)safeShieldForMutableObjectAtIndex{
     
     Class arrayMClass = NSClassFromString(@"__NSArrayM");
@@ -115,11 +120,22 @@
     
 }
 
++ (void)safeShieldForMutableObjectsAtIndexes{
+    
+    Class arrayMClass = NSClassFromString(@"__NSArrayM");
+    
+    //objectAtIndexes:
+    [BAFCrashHandler exchangeInstanceMethod:arrayMClass
+                                 method1Sel:@selector(objectsAtIndexes:)
+                                 method2Sel:NSSelectorFromString(@"safe_objectsAtIndexes:")];
+    
+    
+}
+
 + (void)safeShieldForMutableSetObjectAtIndexedSubscript{
    
-    Class arrayMClass = NSClassFromString(@"__NSArrayM");
-
     //setObject:atIndexedSubscript:
+    Class arrayMClass = NSClassFromString(@"__NSArrayM");
     [BAFCrashHandler exchangeInstanceMethod:arrayMClass
                                  method1Sel:@selector(setObject:atIndexedSubscript:)
                                  method2Sel:NSSelectorFromString(@"safe_setObject:atIndexedSubscript:")];
@@ -129,8 +145,8 @@
 
 + (void)safeShieldForMutableRemoveObjectAtIndex{
     
-    Class arrayMClass = NSClassFromString(@"__NSArrayM");
     //removeObjectAtIndex:
+    Class arrayMClass = NSClassFromString(@"__NSArrayM");
     [BAFCrashHandler exchangeInstanceMethod:arrayMClass
                                  method1Sel:@selector(removeObjectAtIndex:)
                                  method2Sel:NSSelectorFromString(@"safe_removeObjectAtIndex:")];
@@ -140,9 +156,8 @@
 
 + (void)safeShieldForMutableInsertObjectAtIndex{
 
-    Class arrayMClass = NSClassFromString(@"__NSArrayM");
-
     //insertObject:atIndex:
+    Class arrayMClass = NSClassFromString(@"__NSArrayM");
     [BAFCrashHandler exchangeInstanceMethod:arrayMClass
                                  method1Sel:@selector(insertObject:atIndex:)
                                  method2Sel:NSSelectorFromString(@"safe_insertObject:atIndex:")];
@@ -151,9 +166,8 @@
 
 + (void)safeShieldForMutableGetObjectsRange{
     
-    Class arrayMClass = NSClassFromString(@"__NSArrayM");
-
     //getObjects:range:
+    Class arrayMClass = NSClassFromString(@"__NSArrayM");
     [BAFCrashHandler exchangeInstanceMethod:arrayMClass
                                  method1Sel:@selector(getObjects:range:)
                                  method2Sel:NSSelectorFromString(@"safe_getObjects:range:")];
@@ -161,9 +175,9 @@
 }
 
 + (void)safeShieldForMutableAddObject{
-   
-    Class arrayMClass = NSClassFromString(@"__NSArrayM");
+    
     //addObject:
+    Class arrayMClass = NSClassFromString(@"__NSArrayM");
     [BAFCrashHandler exchangeInstanceMethod:arrayMClass
                                  method1Sel:@selector(addObject:)
                                  method2Sel:NSSelectorFromString(@"safe_addObject:")];
@@ -234,6 +248,7 @@
     [BAFCrashHandler exchangeClassMethod:[NSDictionary class]
                               method1Sel:@selector(dictionaryWithObjects:forKeys:count:)
                               method2Sel:NSSelectorFromString(@"safe_dictionaryWithObjects:forKeys:count:")];
+
     
 }
 
@@ -271,6 +286,109 @@
     [BAFCrashHandler exchangeInstanceMethod:dictionaryM
                                  method1Sel:@selector(removeObjectForKey:)
                                  method2Sel:NSSelectorFromString(@"safe_removeObjectForKey:")];
+}
+
+#pragma mark ----NSString
+
++ (void)safeShieldForCharacterAtIndex{
+    //characterAtIndex:
+    Class stringClass = NSClassFromString(@"__NSCFConstantString");
+    
+    [BAFCrashHandler exchangeInstanceMethod:stringClass
+                                 method1Sel:@selector(characterAtIndex:)
+                                 method2Sel:NSSelectorFromString(@"safe_characterAtIndex:")];
+    
+}
+
++ (void)safeShieldForSubstringFromIndex{
+    //substringFromIndex:
+    Class stringClass = NSClassFromString(@"__NSCFConstantString");
+    
+    [BAFCrashHandler exchangeInstanceMethod:stringClass
+                                 method1Sel:@selector(substringFromIndex:)
+                                 method2Sel:NSSelectorFromString(@"safe_substringFromIndex:")];
+    
+}
+
++ (void)safeShieldForSubstringToIndex{
+    //substringToIndex:
+    Class stringClass = NSClassFromString(@"__NSCFConstantString");
+    
+    [BAFCrashHandler exchangeInstanceMethod:stringClass
+                                 method1Sel:@selector(substringToIndex:)
+                                 method2Sel:NSSelectorFromString(@"safe_substringToIndex:")];
+    
+}
+
++ (void)safeShieldForSubstringWithRange{
+    //substringWithRange:
+    Class stringClass = NSClassFromString(@"__NSCFConstantString");
+    
+    [BAFCrashHandler exchangeInstanceMethod:stringClass
+                                 method1Sel:@selector(substringWithRange:)
+                                 method2Sel:NSSelectorFromString(@"safe_substringWithRange:")];
+}
+
+
++ (void)safeShieldForStringByReplacingOccurrencesOfString{
+    
+    //stringByReplacingOccurrencesOfString:withString:
+    Class stringClass = NSClassFromString(@"__NSCFConstantString");
+    
+    [BAFCrashHandler exchangeInstanceMethod:stringClass
+                                 method1Sel:@selector(stringByReplacingOccurrencesOfString:withString:)
+                                 method2Sel:NSSelectorFromString(@"safe_stringByReplacingOccurrencesOfString:withString:")];
+}
+
++ (void)safeShieldForStringByReplacingOccurrencesOfStringWithStringOptionsRange{
+    //stringByReplacingOccurrencesOfString:withString:options:range:
+    Class stringClass = NSClassFromString(@"__NSCFConstantString");
+    
+    [BAFCrashHandler exchangeInstanceMethod:stringClass
+                                 method1Sel:@selector(stringByReplacingOccurrencesOfString:withString:options:range:)
+                                 method2Sel:NSSelectorFromString(@"safe_stringByReplacingOccurrencesOfString:withString:options:range:")];
+}
+
++ (void)safeShieldForStringByReplacingCharactersInRangeWithString{
+    //stringByReplacingCharactersInRange:withString:
+    Class stringClass = NSClassFromString(@"__NSCFConstantString");
+    
+    [BAFCrashHandler exchangeInstanceMethod:stringClass
+                                 method1Sel:@selector(stringByReplacingCharactersInRange:withString:)
+                                 method2Sel:NSSelectorFromString(@"safe_stringByReplacingCharactersInRange:withString:")];
+}
+
+#pragma mark ----NSMutableString
+
++ (void)safeShieldForReplaceCharactersInRange{
+    
+    //replaceCharactersInRange:withString:
+    Class stringClass = NSClassFromString(@"__NSCFString");
+
+    [BAFCrashHandler exchangeInstanceMethod:stringClass
+                                 method1Sel:@selector(replaceCharactersInRange:withString:)
+                                 method2Sel:NSSelectorFromString(@"safe_replaceCharactersInRange:withString:")];
+}
+
+
++ (void)safeShieldForInsertStringAtIndex{
+    
+   //insertString:atIndex:
+    Class stringClass = NSClassFromString(@"__NSCFString");
+    
+    [BAFCrashHandler exchangeInstanceMethod:stringClass
+                                 method1Sel:@selector(insertString:atIndex:)
+                                 method2Sel:NSSelectorFromString(@"safe_insertString:atIndex:")];
+}
+
++ (void)safeShieldForDeleteCharactersInRange{
+    
+    //deleteCharactersInRange
+    Class stringClass = NSClassFromString(@"__NSCFString");
+    
+    [BAFCrashHandler exchangeInstanceMethod:stringClass
+                                 method1Sel:@selector(deleteCharactersInRange:)
+                                 method2Sel:NSSelectorFromString(@"safe_deleteCharactersInRange:")];
 }
 
 
