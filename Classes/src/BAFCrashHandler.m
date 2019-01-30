@@ -28,11 +28,10 @@
     
 //    NSLog(@"originalMethod = %p,swizzledMethod=%p",originalMethod,swizzledMethod);
     
-    BOOL didAddMethod =
-    class_addMethod(anClass,
-                    method1Sel,
-                    method_getImplementation(swizzledMethod),
-                    method_getTypeEncoding(swizzledMethod));
+    BOOL didAddMethod = class_addMethod(anClass,
+                                        method1Sel,
+                                        method_getImplementation(swizzledMethod),
+                                        method_getTypeEncoding(swizzledMethod));
     
     if (didAddMethod) {
         class_replaceMethod(anClass,

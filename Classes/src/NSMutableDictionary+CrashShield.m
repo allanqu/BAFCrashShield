@@ -20,7 +20,7 @@
     }
     @catch (NSException *exception) {
         
-        
+        NSLog(@"exception=%@",exception);
     }
     @finally {
         
@@ -33,7 +33,7 @@
         [self safe_setObject:obj forKeyedSubscript:key];
     }
     @catch (NSException *exception) {
-        
+        NSLog(@"exception=%@",exception);
     }
     @finally {
         
@@ -50,7 +50,7 @@
     }
     @catch (NSException *exception) {
         
-        
+        NSLog(@"exception=%@",exception);
     }
     @finally {
         

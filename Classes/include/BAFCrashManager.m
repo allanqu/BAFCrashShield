@@ -26,6 +26,17 @@ static BAFCrashManager *manager = nil;
 
 @implementation BAFCrashManager
 
+
++ (void)load{
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        BAFCrashConfig *config = [[BAFCrashConfig alloc]init];
+        [BAFCrashManager startCrashShieldWithConfig:config outError:nil];
+    });
+    
+}
+
 + (instancetype)shareInstance{
     
     static dispatch_once_t onceToken;
@@ -46,7 +57,7 @@ static BAFCrashManager *manager = nil;
     }else{
         
         if (outError) {
-            *outError = [NSError errorWithDomain:@"com.bbt.baf.crash" code:-111 userInfo:@{NSLocalizedDescriptionKey:@"参数配置错误，请检查参数"}];
+            *outError = [NSError errorWithDomain:@"com.bbt.baf.crash" code:-404 userInfo:@{NSLocalizedDescriptionKey:@"参数配置错误，请检查参数"}];
         }
     }
 }

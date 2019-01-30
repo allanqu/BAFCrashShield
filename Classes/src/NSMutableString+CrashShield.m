@@ -20,7 +20,7 @@
         [self safe_replaceCharactersInRange:range withString:aString];
     }
     @catch (NSException *exception) {
-
+        NSLog(@"exception=%@",exception);
     }
     @finally {
         
@@ -35,7 +35,7 @@
         [self safe_insertString:aString atIndex:loc];
     }
     @catch (NSException *exception) {
-
+        NSLog(@"exception=%@",exception);
     }
     @finally {
         
@@ -50,7 +50,7 @@
         [self safe_deleteCharactersInRange:range];
     }
     @catch (NSException *exception) {
-
+        NSLog(@"exception=%@",exception);
     }
     @finally {
         

@@ -6,6 +6,9 @@
 //  Copyright © 2018 babytree. All rights reserved.
 //
 
+NSString *const kBAFShieldMatchResources     = @"BAFShieldMatch";
+NSString *const kBAFShieldMatchRecourcesType = @"plist";
+
 #import "BAFCrashConfig.h"
 
 @implementation BAFCrashConfig
@@ -15,7 +18,7 @@
     
     if (!_crashList) {
         
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"BAFShieldMatch" ofType:@"plist"];
+        NSString *path = [[NSBundle mainBundle] pathForResource:kBAFShieldMatchResources ofType:kBAFShieldMatchRecourcesType];
         
         NSArray *plistArr = [NSArray arrayWithContentsOfFile:path];
         
@@ -27,9 +30,7 @@
             [keyArr addObject:key];
         }
         _crashList = [keyArr copy];
-        
     }
-    
     return _crashList;
 }
 
@@ -54,12 +55,9 @@
                     }
                 }
             }
-            
             self.crashList = [tempArr copy];
         }
-        
     }
-    
 }
 
 

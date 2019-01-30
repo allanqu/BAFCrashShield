@@ -18,7 +18,7 @@
     @try {
         [self safe_setValue:value forKey:key];
     } @catch (NSException *exception) {
-        
+        NSLog(@"exception=%@",exception);
     } @finally {
         
     }
@@ -29,7 +29,7 @@
     @try {
         [self safe_setValue:value forKeyPath:keyPath];
     } @catch (NSException *exception) {
-        
+        NSLog(@"exception=%@",exception);
     } @finally {
         
     }
@@ -40,7 +40,7 @@
     @try {
         [self safe_setValue:value forUndefinedKey:key];
     } @catch (NSException *exception) {
-        
+        NSLog(@"exception=%@",exception);
     } @finally {
         
     }
@@ -51,7 +51,7 @@
     @try {
         [self safe_setValuesForKeysWithDictionary:keyedValues];
     } @catch (NSException *exception) {
-        
+        NSLog(@"exception=%@",exception);
     } @finally {
         
     }
@@ -76,7 +76,7 @@
         [self safe_forwardInvocation:anInvocation];
         
     } @catch (NSException *exception) {
-        
+        NSLog(@"exception=%@",exception);
     } @finally {
         
     }

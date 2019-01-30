@@ -18,7 +18,7 @@
     @try {
         instance = [self safe_arrayWithObjects:objects count:idx];
     } @catch (NSException *exception) {
-        
+        NSLog(@"exception=%@",exception);
     } @finally {
         return instance;
     }
@@ -31,7 +31,7 @@
     @try {
       arr = [self safe__NSArrayObjectsAtIndexes:indexes];
     } @catch (NSException *exception) {
-        
+        NSLog(@"exception=%@",exception);
         
     } @finally {
         return arr;
@@ -44,7 +44,7 @@
     @try {
         object = [self safe__NSArrayIObjectAtIndex:index];
     } @catch (NSException *exception) {
-        
+        NSLog(@"exception=%@",exception);
     } @finally {
         
         return object;
@@ -57,7 +57,7 @@
     @try {
         object = [self safe__NSSingleObjectArrayIObjectAtIndex:index];
     } @catch (NSException *exception) {
-        
+        NSLog(@"exception=%@",exception);
     } @finally {
         
         return object;
@@ -70,7 +70,7 @@
     @try {
         object = [self safe__NSArray0ObjectAtIndex:index];
     } @catch (NSException *exception) {
-        
+        NSLog(@"exception=%@",exception);
     } @finally {
         
         return object;
@@ -82,7 +82,7 @@
     @try {
         [self safe__NSArrayGetObjects:objects range:range];
     } @catch (NSException *exception) {
-        
+        NSLog(@"exception=%@",exception);
     } @finally {
         
     
@@ -95,7 +95,7 @@
     @try {
         [self safe__NSSingleObjectArrayIGetObjects:objects range:range];
     } @catch (NSException *exception) {
-        
+        NSLog(@"exception=%@",exception);
     } @finally {
         
         
@@ -108,7 +108,7 @@
     @try {
         [self safe__NSArrayIGetObjects:objects range:range];
     } @catch (NSException *exception) {
-        
+        NSLog(@"exception=%@",exception);
     } @finally {
         
         

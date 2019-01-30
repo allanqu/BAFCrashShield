@@ -22,23 +22,8 @@
         instance = [self safe_dictionaryWithObjects:objects forKeys:keys count:cnt];
     }
     @catch (NSException *exception) {
-        
-//        NSString *defaultToDo = @"AvoidCrash default is to remove nil key-values and instance a dictionary.";
-//        [AvoidCrash noteErrorWithException:exception defaultToDo:defaultToDo];
-//        
-//        //处理错误的数据，然后重新初始化一个字典
-//        NSUInteger index = 0;
-//        id  _Nonnull __unsafe_unretained newObjects[cnt];
-//        id  _Nonnull __unsafe_unretained newkeys[cnt];
-//        
-//        for (int i = 0; i < cnt; i++) {
-//            if (objects[i] && keys[i]) {
-//                newObjects[index] = objects[i];
-//                newkeys[index] = keys[i];
-//                index++;
-//            }
-//        }
-//        instance = [self avoidCrashDictionaryWithObjects:newObjects forKeys:newkeys count:index];
+
+        NSLog(@"exception=%@",exception);
     }
     @finally {
         return instance;

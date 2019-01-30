@@ -36,7 +36,7 @@
         [self safe_objectsAtIndexes:indexes];
         
     } @catch (NSException *exception) {
-        
+        NSLog(@"exception=%@",exception);
     } @finally {
         
     }
@@ -48,7 +48,7 @@
     @try {
         [self safe_setObject:object atIndexedSubscript:index];
     } @catch (NSException *exception) {
-        
+        NSLog(@"exception=%@",exception);
     } @finally {
         
     }
@@ -60,8 +60,7 @@
     @try {
         [self safe_removeObjectAtIndex:index];
     } @catch (NSException *exception) {
-        
-        
+        NSLog(@"exception=%@",exception);
     } @finally {
         
         
@@ -87,7 +86,7 @@
         [self safe_getObjects:objects range:range];
         
     } @catch (NSException *exception) {
-        
+        NSLog(@"exception=%@",exception);
     } @finally {
         
         
